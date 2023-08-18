@@ -1,12 +1,14 @@
-.box {
+.container {
+  .box1, .box2 {
     width: 200px;
     height: 200px;
     background-color: skyblue;
-    transition: width 2s
+    transition: width 2s;
+  
+  }
+  .box1 {
     &:hover {
-
+      width: 400px;
     }
   }
-.box:hover {
-  width: 400px;
 }
