@@ -33,8 +33,8 @@ const items: MenuItem[] = [
     getItem(<Link to={`css/1`}>transition</Link>, '1'),
     getItem(<Link to={`css/2`}>animation</Link>, '2'),
   ]),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 5', '5'),
+  getItem('Canvas 动画', 'sub2', <AppstoreOutlined />, [
+    getItem(<Link to={`canvas/1`}>文字雨</Link>, '3'),
     getItem('Option 6', '6'),
     getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
   ]),
