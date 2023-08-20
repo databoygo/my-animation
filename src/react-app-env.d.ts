@@ -2,6 +2,12 @@
 /// <reference types="react" />
 /// <reference types="react-dom" />
 
+// 项目中 *.d.ts 文件中加上如下配置,解决less命名污染
+declare module '*.module.less' {
+  const classes: { readonly [key: string]: string };
+  export default classes;
+}
+
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test';

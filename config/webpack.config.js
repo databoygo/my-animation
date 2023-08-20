@@ -520,14 +520,18 @@ module.exports = function (webpackEnv) {
           {
               test: lessModuleRegex,
               use: getStyleLoaders(
-                  {
-                      importLoaders: 2,
-                      sourceMap: isEnvProduction && shouldUseSourceMap,
-                      modules: true,
-                      getLocalIdent: getCSSModuleLocalIdent,
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
+                  modules: {
+                    mode: "local",
+                    getLocalIdent: getCSSModuleLocalIdent,
                   },
-                  'less-loader'
-              )
+                },
+                "less-loader"
+              ),
           },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
